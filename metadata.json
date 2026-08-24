@@ -1,0 +1,6 @@
+{
+  "name": "TrailMates",
+  "description": "A mobile-first social fitness app where users create activity routes, discover and connect with nearby mates, chat, and participate in simulated AR workouts together.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

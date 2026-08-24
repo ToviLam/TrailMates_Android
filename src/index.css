@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-green: #2DD4BF;   /* mint — primary/brand */
+  --color-brand-blue: #38BDF8;    /* electric sky blue — secondary */
+  --color-brand-accent: #A3E635;  /* lime — energy/active/live states */
+  --color-brand-pop: #F472B6;     /* bubblegum pink — social actions */
+  --color-base: #7C8696;          /* app/page background — cool mid-gray */
+  --color-surface: #EEF2F6;       /* primary card surface */
+  --color-surface-2: #E2E8F0;     /* nested sub-section inside card */
+  --color-surface-3: #D5DDE6;     /* deeper nested element */
+  --color-surface-border: #D9DFE7; /* borders between surfaces */
+}
+
+/* Core Page Background and Text overrides */
+body,
+.bg-base,
+#landing-screen-container,
+#social-feed-container,
+#map-view-container,
+#create-route-container,
+#live-session-container,
+#chat-workspace-container,
+#people-lobby-container,
+#profile-container,
+#summary-screen-container,
+#avatar-builder-container,
+#in-app-user-guide-screen {
+  background-color: var(--color-base) !important;
+  color: #FFFFFF !important;
+}
+
+/* Ensure the light dot overlay design still prints nicely on the mid-gray background */
+div[class*="bg-[radial-gradient"] {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px) !important;
+}
+
+/* Base text readability on mid-gray background (#7C8696) */
+.text-white,
+.text-zinc-50,
+.text-zinc-100,
+.text-zinc-200,
+.text-gray-100,
+.text-gray-200 {
+  color: #FFFFFF !important;
+}
+
+.text-zinc-300,
+.text-zinc-400,
+.text-slate-400,
+.text-gray-300,
+.text-gray-400 {
+  color: #E8ECF1 !important;
+}
+
+.text-zinc-500,
+.text-zinc-600,
+.text-slate-500,
+.text-gray-500 {
+  color: rgba(232, 236, 241, 0.7) !important;
+}
+
+/* App shell bottom navbar and notch/frame */
+#app-bottom-navbar,
+[id="app-bottom-navbar"] {
+  background-color: var(--color-base) !important;
+  border-top: 1px solid var(--color-surface-border) !important;
+}
+
+#app-bottom-navbar button {
+  color: #E8ECF1 !important;
+}
+
+#app-bottom-navbar button.text-brand-green {
+  color: #2DD4BF !important;
+  background-color: rgba(45, 212, 191, 0.15) !important;
+}
+
+/* Modal overlays and cards */
+#profile-inspector-modal,
+.modal-overlay {
+  background-color: rgba(124, 134, 150, 0.8) !important;
+}
+
+/* Layered Surface CSS Overrides */
+[class*="bg-surface"],
+.bg-surface,
+.bg-surface-2,
+.bg-surface-3 {
+  color: #1E293B !important;
+}
+
+/* Default light gray card surfaces */
+.bg-surface {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-surface-border) !important;
+}
+
+/* Map standard nested elements of any kind (zinc classes) to our surface hierarchy inside cards */
+[class*="bg-surface"] {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-surface-border) !important;
+}
+
+/* Level 2 Sub-sections inside a card */
+.bg-surface-2,
+[class*="bg-surface"] [class*="bg-zinc-950"],
+[class*="bg-surface"] [class*="bg-zinc-900"],
+[class*="bg-surface"] [class*="bg-zinc-850"],
+[class*="bg-surface"] [class*="bg-zinc-800"],
+[class*="bg-surface"] [class*="bg-zinc-950/40"],
+[class*="bg-surface"] [class*="bg-zinc-950/60"],
+[class*="bg-surface"] [class*="bg-black/40"],
+[class*="bg-surface"] [class*="bg-black/60"],
+[class*="bg-surface"] [class*="bg-zinc-900/50"] {
+  background-color: var(--color-surface-2) !important;
+  border-color: var(--color-surface-border) !important;
+}
+
+/* Level 3 Deeper elements */
+.bg-surface-3,
+[class*="bg-surface"] input,
+[class*="bg-surface"] textarea,
+[class*="bg-surface"] select,
+[class*="bg-surface"] [class*="bg-zinc-700"],
+[class*="bg-surface"] [class*="bg-zinc-750"] {
+  background-color: var(--color-surface-3) !important;
+  border-color: var(--color-surface-border) !important;
+}
+
+/* Input placeholder text */
+[class*="bg-surface"] input::placeholder,
+[class*="bg-surface"] textarea::placeholder {
+  color: #64748B !important;
+}
+
+/* Text readability on light surfaces (#EEF2F6 / #E2E8F0 / #D5DDE6) */
+[class*="bg-surface"] h1,
+[class*="bg-surface"] h2,
+[class*="bg-surface"] h3,
+[class*="bg-surface"] h4,
+[class*="bg-surface"] h5,
+[class*="bg-surface"] h6,
+[class*="bg-surface"] .text-white,
+[class*="bg-surface"] .text-zinc-50,
+[class*="bg-surface"] .text-zinc-100,
+[class*="bg-surface"] .text-zinc-200,
+[class*="bg-surface"] .text-gray-100,
+[class*="bg-surface"] .text-gray-200,
+[class*="bg-surface"] .text-neutral-100,
+[class*="bg-surface"] .text-neutral-200 {
+  color: #1E293B !important;
+}
+
+[class*="bg-surface"] .text-zinc-300,
+[class*="bg-surface"] .text-zinc-400,
+[class*="bg-surface"] .text-zinc-400\/80,
+[class*="bg-surface"] .text-gray-300,
+[class*="bg-surface"] .text-gray-400,
+[class*="bg-surface"] .text-zinc-555,
+[class*="bg-surface"] label {
+  color: #475569 !important;
+}
+
+[class*="bg-surface"] .text-zinc-500,
+[class*="bg-surface"] .text-zinc-600,
+[class*="bg-surface"] .text-gray-500,
+[class*="bg-surface"] .text-gray-600 {
+  color: #64748B !important;
+}
+
+/* Border overrides on light surfaces */
+[class*="bg-surface"] .border-zinc-800,
+[class*="bg-surface"] .border-zinc-750,
+[class*="bg-surface"] .border-zinc-700,
+[class*="bg-surface"] .border-zinc-850,
+[class*="bg-surface"] .border-zinc-800\/60,
+[class*="bg-surface"] .border-zinc-700\/60 {
+  border-color: var(--color-surface-border) !important;
+}
+
+/* Vivid Brand Accents (they pop well on both mid-gray and light surfaces) */
+[class*="bg-surface"] .text-brand-green {
+  color: #2DD4BF !important;
+}
+[class*="bg-surface"] .text-brand-pop {
+  color: #F472B6 !important;
+}
+[class*="bg-surface"] .text-brand-accent {
+  color: #A3E635 !important;
+}
+[class*="bg-surface"] .text-brand-blue {
+  color: #38BDF8 !important;
+}
+
+/* Primary Button Override: mint #2DD4BF with #0B3B35 text */
+[class*="bg-surface"] .bg-brand-green,
+[class*="bg-surface"] [class*="from-brand-green"],
+[class*="bg-surface"] [class*="bg-gradient-to-r"] {
+  background-color: #2DD4BF !important;
+  background-image: none !important;
+  color: #0B3B35 !important;
+}
+
+[class*="bg-surface"] .bg-brand-pop {
+  background-color: #F472B6 !important;
+  color: #FFFFFF !important;
+}
+
+[class*="bg-surface"] .bg-brand-accent {
+  background-color: #A3E635 !important;
+  color: #0B3B35 !important;
+}
+
+/* Handle badge background colors inside card surfaces gracefully */
+[class*="bg-surface"] .bg-brand-green\/10,
+[class*="bg-surface"] .bg-brand-green\/20,
+[class*="bg-surface"] .bg-brand-green\/30 {
+  background-color: rgba(45, 212, 191, 0.15) !important;
+  color: #2DD4BF !important;
+}
+
+[class*="bg-surface"] .bg-brand-pop\/10,
+[class*="bg-surface"] .bg-brand-pop\/20,
+[class*="bg-surface"] .bg-brand-pop\/30 {
+  background-color: rgba(244, 114, 182, 0.15) !important;
+  color: #F472B6 !important;
+}
+
+[class*="bg-surface"] .bg-brand-accent\/10,
+[class*="bg-surface"] .bg-brand-accent\/20,
+[class*="bg-surface"] .bg-brand-accent\/30 {
+  background-color: rgba(163, 230, 53, 0.15) !important;
+  color: #A3E635 !important;
+}
+
+/* Icon / SVG parameters inside cards */
+[class*="bg-surface"] svg {
+  stroke-width: 2.2px;
+}
+
+/* Interactive elements / normal buttons nested inside cards */
+[class*="bg-surface"] button[class*="bg-zinc-"] {
+  background-color: var(--color-surface-2) !important;
+  color: #1E293B !important;
+}
+
+[class*="bg-surface"] button[class*="bg-zinc-"]:hover {
+  background-color: var(--color-surface-3) !important;
+}
+
+/* Custom scrollbars for mobile panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
