@@ -1,8 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:width="72dp"
-        android:height="72dp"
-        android:drawable="@drawable/trailmates_icon_1787615457240"
-        android:gravity="center" />
-</layer-list>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M54,20 C42.95,20 34,28.95 34,40 C34,53.5 50.5,75.2 51.2,76.1 C52.6,77.9 55.4,77.9 56.8,76.1 C57.5,75.2 74,53.5 74,40 C74,28.95 65.05,20 54,20 Z" />
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M54,32 C49.58,32 46,35.58 46,40 C46,44.42 49.58,48 54,48 C58.42,48 62,44.42 62,40 C62,35.58 58.42,32 54,32 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,84 L76,84 C77.1,84 78,84.9 78,86 C78,87.1 77.1,88 76,88 L32,88 C30.9,88 30,87.1 30,86 C30,84.9 30.9,84 32,84 Z" />
+</vector>
